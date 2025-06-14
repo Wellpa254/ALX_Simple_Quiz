@@ -1,16 +1,16 @@
 function checkAnswer() {
-    // Correct answer
-    const correctAnswer = "4";
+    // Retrieve the correct answer
+    const correctAnswer = document.getElementById("choice1"); // Correct input element
 
-    // Get user's selected answer
+    // Retrieve the user's selected answer
     const userAnswer = document.querySelector('input[name="quiz"]:checked');
 
-    // Get feedback element
+    // Retrieve the feedback element
     const feedback = document.getElementById("feedback");
 
     if (userAnswer) {
-        // Compare answers
-        if (userAnswer.value === correctAnswer) {
+        // Compare the user's selected input element with the correct answer element
+        if (userAnswer === correctAnswer) {
             feedback.textContent = "Correct! Well done.";
             feedback.style.color = "green";
         } else {
@@ -23,6 +23,6 @@ function checkAnswer() {
     }
 }
 
-// Add event listener to the submit button
+// Add an event listener to the "Submit Answer" button
 const submitButton = document.getElementById("submit-answer");
 submitButton.addEventListener("click", checkAnswer);
